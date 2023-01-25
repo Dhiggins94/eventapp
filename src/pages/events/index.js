@@ -20,3 +20,4 @@ const Page = () => {
   );
 };
 export default Page;
+// all events aka dyanmic pages
