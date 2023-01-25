@@ -21,3 +21,5 @@ this is my notes taking area for which i'll write about the things i've learn wh
 9. we create dyanmic pages so we can have a template that will dyanmically render the content and create paths for each event. we do that by making an identifier by making an [id].js file. you can name the file anything you like such as [event-id] its just commonly used as [id] as long as their square brackets nextJS will recognize it as a dyanmic file. this page will loaded for different paths and different page names, EX: http://localhost:3000/events/1234 or http://localhost:3000/events/2 will load that single page.
 
 10. to handle events per city, we can get next to handle it them dyanmically. by creating a sub folder and run them dyanmically by adding the square brackets (which we did with the category folder aka [cat]).
+
+11.now we're moving on to connecting the paths on the events page to the events page that list the events for that specific city.

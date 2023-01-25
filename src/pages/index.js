@@ -48,7 +48,7 @@ export default function Home() {
           </a>
           <a href="">
             <img />
-            <h2>Events in New York</h2>
+            <h2>Events in Barcelona</h2>
             <p>
               {" "}
               Johto Drapion Patrat Granbull Ninetales Pichu Rhyhorn. Johto
