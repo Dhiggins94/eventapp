@@ -5,7 +5,7 @@ import styles from "@/styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <>
       <div className={styles.container}>
@@ -26,36 +26,18 @@ export default function Home() {
         </header>
 
         <main className={styles.main}>
-          <a href="">
-            <img />
-            <h2>Events in London</h2>
-            <p>
-              {" "}
-              Johto Drapion Patrat Granbull Ninetales Pichu Rhyhorn. Johto
-              Pokeball Corphish Spheal Mismagius Buizel Slugma. Plain Badge
-              Ciccino Marshtomp MysteryBerry Torchic Potion Stunfisk.{" "}
-            </p>
-          </a>
-          <a href="">
-            <img />
-            <h2>Events in San fransico</h2>
-            <p>
-              {" "}
-              Johto Drapion Patrat Granbull Ninetales Pichu Rhyhorn. Johto
-              Pokeball Corphish Spheal Mismagius Buizel Slugma. Plain Badge
-              Ciccino Marshtomp MysteryBerry Torchic Potion Stunfisk.{" "}
-            </p>
-          </a>
-          <a href="">
-            <img />
-            <h2>Events in Barcelona</h2>
-            <p>
-              {" "}
-              Johto Drapion Patrat Granbull Ninetales Pichu Rhyhorn. Johto
-              Pokeball Corphish Spheal Mismagius Buizel Slugma. Plain Badge
-              Ciccino Marshtomp MysteryBerry Torchic Potion Stunfisk.{" "}
-            </p>
-          </a>
+          {data.map((ev) => (
+            <a key={ev.id} href={`/events/${ev.id}`}>
+              <Image
+                width={200}
+                height={100}
+                alt={ev.title}
+                src={ev.image}
+              />
+              <h2>{ev.title}</h2>
+              <p>{ev.description}</p>
+            </a>
+          ))}
         </main>
 
         <footer className={styles.footer}>
@@ -64,4 +46,15 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+// here we're use serverside props and up above we're destructing our props so it can grab said prop directly. its all so we can render content server side. this will get ran first before it runs the rest of the components. we can also add a key or a secret where the client itself wont have access to any private info.
+export async function getServerSideProps() {
+  const { events_categories } = await import("/data/data.json");
+
+  return {
+    props: {
+      data: events_categories,
+    },
+  };
 }

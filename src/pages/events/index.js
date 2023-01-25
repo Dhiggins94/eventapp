@@ -1,7 +1,7 @@
-const Page = () => {
+const EventsPage = () => {
   return (
     <div>
-      <h1>Events page</h1>
+      <h1>Event Page</h1>
       <div>
         <a href="">
           <img />
@@ -19,5 +19,5 @@ const Page = () => {
     </div>
   );
 };
-export default Page;
+export default EventsPage;
 // all events aka dyanmic pages

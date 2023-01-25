@@ -1,7 +1,7 @@
 this is my notes taking area for which i'll write about the things i've learn while making a site with next.js
 
 
-1.server side (next.js specality) will allow the site to fetch the data and pre render the componets on server. which makes pages ready to render on site whenever a requests hits the server.
+1.server side rendering / statci generation (next.js specality) will allow the site to fetch the data and pre render the componets on server. which makes pages ready to render on site whenever a requests hits the server.
 
 2.SSR is helpful for improving the perfomance of a website, caches data and works good for search engine optimization. though it is not important for all pages such as when someone needs to log in on a specific page to see content. search engines wont need to see such a page because the user needs to log in first to see the content which makes clienet side rendering preferable. for a site like an event website we want our content to be picked up by the search engine scrolls so theres more of a chance to get the site seen by a more people.
 
@@ -22,4 +22,6 @@ this is my notes taking area for which i'll write about the things i've learn wh
 
 10. to handle events per city, we can get next to handle it them dyanmically. by creating a sub folder and run them dyanmically by adding the square brackets (which we did with the category folder aka [cat]).
 
-11.now we're moving on to connecting the paths on the events page to the events page that list the events for that specific city.
+11.now we're moving on to connecting the paths on the events page to the events page that list the events for that specific city. we're going to use data from the data.json to connect the content for the events to the events in those specific cities. we're going to do server side rendering in order to render our content dyanmically. we use the function called "getserversideprop" outside the regular export page and it returns an object that has props and we will use it to return any props we want the page to have.
+
+12.
