@@ -1,0 +1,11 @@
+this is my notes taking area for which i'll write about the things i've learn while making a site with next.js
+
+
+1.server side (next.js specality) will allow the site to fetch the data and pre render the componets on server. which makes pages ready to render on site whenever a requests hits the server.
+
+2.SSR is helpful for improving the perfomance of a website, caches data and works good for search engine optimization. though it is not important for all pages such as when someone needs to log in on a specific page to see content. search engines wont need to see such a page because the user needs to log in first to see the content which makes clienet side rendering preferable. for a site like an event website we want our content to be picked up by the search engine scrolls so theres more of a chance to get the site seen by a more people.
+
+
+3. to make this website we're going to need 18 pages; home, about us, events, events per city 3 each, 12 single event pages. with next js we can generate 3 static pages and 2 dyanmic pages which reduces our page count to 18. the 3 pages will be our events while the other two will be template pages.
+
+4. in terms of file structing the files to take note of will be the "styles" folder which contains our global and home css, our "public" where we can store vids,pics, fonts, icons and it would also be avalible to anyone, pages folder which will hold any file based routing.
