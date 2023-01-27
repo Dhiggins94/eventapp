@@ -28,12 +28,7 @@ export default function Home({ data }) {
         <main className={styles.main}>
           {data.map((ev) => (
             <a key={ev.id} href={`/events/${ev.id}`}>
-              <Image
-                width={200}
-                height={100}
-                alt={ev.title}
-                src={ev.image}
-              />
+              <Image width={200} height={100} alt={ev.title} src={ev.image} />
               <h2>{ev.title}</h2>
               <p>{ev.description}</p>
             </a>
@@ -51,7 +46,6 @@ export default function Home({ data }) {
 // here we're use serverside props and up above we're destructing our props so it can grab said prop directly. its all so we can render content server side. this will get ran first before it runs the rest of the components. we can also add a key or a secret where the client itself wont have access to any private info.
 export async function getServerSideProps() {
   const { events_categories } = await import("/data/data.json");
-
   return {
     props: {
       data: events_categories,

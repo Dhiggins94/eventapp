@@ -24,4 +24,4 @@ this is my notes taking area for which i'll write about the things i've learn wh
 
 11.now we're moving on to connecting the paths on the events page to the events page that list the events for that specific city. we're going to use data from the data.json to connect the content for the events to the events in those specific cities. we're going to do server side rendering in order to render our content dyanmically. we use the function called "getserversideprop" outside the regular export page and it returns an object that has props and we will use it to return any props we want the page to have.
 
-12.
+12. another way to pre render our content on the page we're going to use a method called static generation (for nextjs we use the function getStaticPaths/props). it works by having next pre-render all the pages in advance during the build time of the app, we pre-render those pages before it gets deployed. it keeps updating itself even after it deploys without needing to redploy the app. 

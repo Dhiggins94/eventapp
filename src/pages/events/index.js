@@ -1,7 +1,10 @@
+/** @jsxImportSource theme-ui */
+import { jsx, ThemeProvider } from "theme-ui";
+
 const EventsPage = () => {
   return (
     <div>
-      <h1>Event Page</h1>
+      <h1 sx={{ color: "primary" }}>Event Page</h1>
       <div>
         <a href="">
           <img />
@@ -21,3 +24,15 @@ const EventsPage = () => {
 };
 export default EventsPage;
 // all events aka dyanmic pages
+
+
+export async function getStaticProps() {
+  const {events_categories} = import('/data/data.json')
+  return {
+    props: {
+    data: events_categories
+  }
+}
+
+}
+//static generating our pages 
