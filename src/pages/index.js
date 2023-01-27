@@ -52,3 +52,4 @@ export async function getServerSideProps() {
     },
   };
 }
+// THIS IS OUR HOME PAGE
