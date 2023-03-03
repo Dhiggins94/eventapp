@@ -1,12 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 
-const EventsCatPage = ({ data }) => {
+const EventsCatPage = ({ data, pageName }) => {
   return (
     <div>
-      <h1>Events in London</h1>
+      <h1>Events in {pageName}</h1>
       <div>
         {data.map((ev) => (
-          <a key={ev.id} href={`/events/${ev.city}/${ev.id}`}>
+          <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`} passHref>
+            {/* we're using link to navigate client side */}
+
             <Image
               width={300}
               height={300}
@@ -15,7 +18,7 @@ const EventsCatPage = ({ data }) => {
             ></Image>
             <h2> {ev.title}</h2>
             <p>{ev.description}</p>
-          </a>
+          </Link>
         ))}
         {/*  with this now we can see our single events */}
       </div>
@@ -52,7 +55,7 @@ export async function getStaticProps(context) {
   const { allEvents } = await import("/data/data.json");
   const data = allEvents.filter((ev) => ev.city === id);
   return {
-    props: { data },
+    props: { data, pageName: id },
   };
 }
 //context as a parameter will show information on our categories,id page and even the exactly page the user is on. now within this getStaticProps we're going to filter through our array of object to grab the id that equals to our category id
