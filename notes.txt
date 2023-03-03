@@ -33,3 +33,5 @@ this is my notes taking area for which i'll write about the things i've learn wh
 15. nextjs version of Link helps us transition/ navigate pages easier. we can use a property called passhref to force an href to its link child. 
 
 16. NEXT JS 13 DOES NOT NEED ANCHOR TAGS IN THEIR LINKS REMOVE THEM.
+
+17.we're using FIND instead of filter for the single cat page is filter() returns an new array containing the element that im looking for , but find() returns the exact element that im looking for.
