@@ -1,6 +1,8 @@
 /** @jsxImportSource theme-ui */
 // theme ui
 import "@/styles/globals.css";
+import "@/styles/general.sass";
+
 // import { jsx, ThemeProvider } from "theme-ui";
 // import tailwindStyle from "theme";
 import MainLayout from "@/components/layout/main-layout";
